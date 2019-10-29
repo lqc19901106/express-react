@@ -1,0 +1,14 @@
+html
+  head
+    title= title
+    //- link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript').
+      window.GLOBAL = {
+        loginUserInfo: !{user},
+        title: '#{title}'
+      }
+  body
+    block content
+    div#root
+    script(src="dist/common.bundle.js")
+    script(src="dist/index.bundle.js")
