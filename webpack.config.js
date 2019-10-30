@@ -31,6 +31,19 @@ module.exports ={
                     ] }
                 }
             ]
+        },{
+            test: /\.less$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [ {
+                loader: 'style-loader',
+                options: { injectType: 'singletonStyleTag' },
+              },
+              'css-loader',
+              { 
+                  loader: 'less-loader', 
+                  options: { sourceMap: true}
+                }
+            ]
         }]
     },
     plugins:[new webpack.optimize.SplitChunksPlugin({

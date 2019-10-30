@@ -12,6 +12,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "less": "^3.10.3",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
@@ -19,8 +20,10 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.6.3",
+    "autoprefixer": "^9.7.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "less-loader": "^5.0.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
