@@ -7,8 +7,6 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@babel/preset-es2015": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.6.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -19,12 +17,19 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.2.0",
+    "postcss-loader": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "Chrome 49"
+  ]
 }

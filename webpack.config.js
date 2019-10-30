@@ -14,6 +14,23 @@ module.exports ={
                 presets: ['@babel/preset-env','@babel/preset-react']
               }
             }
+        },{
+            test: /\.css$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [ {
+                loader: 'style-loader',
+                options: { injectType: 'singletonStyleTag' },
+              },
+              'css-loader',
+              { 
+                  loader: 'postcss-loader', 
+                  options: { 
+                    ident: 'postcss',
+                    plugins: (loader) => [
+                        require('autoprefixer')(),
+                    ] }
+                }
+            ]
         }]
     },
     plugins:[new webpack.optimize.SplitChunksPlugin({
