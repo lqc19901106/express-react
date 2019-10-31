@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports ={
+    mode:'development',
+    devtool: 'source-map',
     entry: {
         common:['react', 'react-dom'],
         index: "./app/index"
@@ -20,17 +22,7 @@ module.exports ={
             test: /\.tsx?$/,
             exclude: /(node_modules|bower_components)/,
             use: {
-              loader: 'ts-loader',
-              options: {
-                "compilerOptions": {
-                    "module": "commonjs",
-                    "target": "es5",
-                    "allowJs": true
-                  },
-                  "include": [
-                    "./app/*"
-                  ],
-              }
+              loader: 'ts-loader'
             }
         },{
             test: /\.css$/,

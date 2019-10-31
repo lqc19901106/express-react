@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+
 interface IState {
     state: String,
 }
@@ -16,5 +17,4 @@ export default class TestComponent extends React.Component<IProps,IState>{
     render (){
         return <div className='aa toast colors'>页面测试</div>
     }
-
 }
