@@ -1,4 +1,6 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports ={
     entry: {
         common:['react', 'react-dom'],
@@ -17,10 +19,7 @@ module.exports ={
         },{
             test: /\.css$/,
             exclude: /(node_modules|bower_components)/,
-            use: [ {
-                loader: 'style-loader',
-                options: { injectType: 'singletonStyleTag' },
-              },
+            use: [MiniCssExtractPlugin.loader,
               'css-loader',
               { 
                   loader: 'postcss-loader', 
@@ -34,10 +33,7 @@ module.exports ={
         },{
             test: /\.less$/,
             exclude: /(node_modules|bower_components)/,
-            use: [ {
-                loader: 'style-loader',
-                options: { injectType: 'singletonStyleTag' },
-              },
+            use: [ MiniCssExtractPlugin.loader,
               'css-loader',
               { 
                   loader: 'less-loader', 
@@ -53,12 +49,9 @@ module.exports ={
                   }
             ]
         },{
-            test: /\.scss$/,
+            test:/\.(sa|sc)ss$/,
             exclude: /(node_modules|bower_components)/,
-            use: [ {
-                loader: 'style-loader',
-                options: { injectType: 'singletonStyleTag' },
-              },
+            use: [MiniCssExtractPlugin.loader, 
               'css-loader',
               { 
                   loader: 'sass-loader', 
@@ -89,7 +82,10 @@ module.exports ={
                 minChunks: 2
             }
         }
-      })],
+      }),new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+    })],
     output: {
         path: __dirname + '/static/dist/',
         filename: '[name].bundle.js'
