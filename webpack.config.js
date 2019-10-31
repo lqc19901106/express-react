@@ -42,7 +42,36 @@ module.exports ={
               { 
                   loader: 'less-loader', 
                   options: { sourceMap: true}
-                }
+                },
+                { 
+                    loader: 'postcss-loader', 
+                    options: { 
+                      ident: 'postcss',
+                      plugins: (loader) => [
+                          require('autoprefixer')(),
+                      ] }
+                  }
+            ]
+        },{
+            test: /\.scss$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [ {
+                loader: 'style-loader',
+                options: { injectType: 'singletonStyleTag' },
+              },
+              'css-loader',
+              { 
+                  loader: 'sass-loader', 
+                  options: { sourceMap: true}
+                },
+                { 
+                    loader: 'postcss-loader', 
+                    options: { 
+                      ident: 'postcss',
+                      plugins: (loader) => [
+                          require('autoprefixer')(),
+                      ] }
+                  }
             ]
         }]
     },

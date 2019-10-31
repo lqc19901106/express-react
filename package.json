@@ -24,15 +24,17 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "less-loader": "^5.0.0",
+    "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
   "browserslist": [
-    "last 1 version",
+    "last 10 version",
     "Chrome 49"
   ]
 }
