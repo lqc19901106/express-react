@@ -8,12 +8,28 @@ module.exports ={
     },
     module:{
         rules: [{
-            test: /\.js|jsx$/,
+            test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/,
             use: {
               loader: 'babel-loader',
               options: {
                 presets: ['@babel/preset-env','@babel/preset-react']
+              }
+            }
+        }, {
+            test: /\.tsx?$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'ts-loader',
+              options: {
+                "compilerOptions": {
+                    "module": "commonjs",
+                    "target": "es5",
+                    "allowJs": true
+                  },
+                  "include": [
+                    "./app/*"
+                  ],
               }
             }
         },{
@@ -84,7 +100,8 @@ module.exports ={
         }
       }),new MiniCssExtractPlugin({
         filename: "[name].css",
-        chunkFilename: "[id].css"
+        chunkFilename: "[id].css",
+        ignoreOrder: true,
     })],
     output: {
         path: __dirname + '/static/dist/',

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Test from './index.tsx';
 require('./index.scss')
 require('./index.less')
 require('./index.css')
 
-ReactDOM.render(<div className='aa toast colors'>页面测试</div>, document.getElementById('root'));
+ReactDOM.render(<Test />, document.getElementById('root'));
